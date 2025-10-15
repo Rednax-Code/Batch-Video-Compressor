@@ -411,14 +411,14 @@ class navigator():
 			self.get_directory_contents()
 
 def startup_text():
-	"""Shows the startup menu"""
+	"""Shows the startup menu (Currently not in use)"""
 	print(f'This program converts video files to a certain bitrate.{CONTINUE_MESSAGE}')
 	return OK, 1
 
 
 if __name__ == '__main__':
 	nav = navigator()
-	menu = 0
+	menu = 1
 	menus = [startup_text, nav.navigation_menu]
 	exit_code = 0
 	error_messages = {
@@ -446,7 +446,3 @@ if __name__ == '__main__':
 			os.system('cls')
 		if menu == -1:
 			running = False
-			#input('Press \'enter\' to close')
-
-#i = ffmpeg.input(video_full_path)
-#ffmpeg.output(i, os.devnull, **{'c:v': 'libx264', 'b:v': video_bitrate, 'pass': 1, 'f': 'mp4'}).overwrite_output().run()
